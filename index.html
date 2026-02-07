@@ -1,111 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Pour toi mon amour ❤️</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<title>Pour toi mon amour ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .container {
-            padding: 40px 20px;
-            animation: fadeIn 2s ease-in-out;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff5f8a, #ff9aa2);
+    color: white;
+    text-align: center;
+}
 
-        h1 {
-            font-size: 2.5em;
-        }
+.container {
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: auto;
+    animation: fadeIn 2s ease;
+}
 
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin: 20px 0;
-        }
+h1 {
+    font-size: 2.3em;
+    margin-bottom: 10px;
+}
 
-        button {
-            background: white;
-            color: #ff4d6d;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1em;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+p {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
 
-        button:hover {
-            transform: scale(1.1);
-            background: #ffe3ea;
-        }
+button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4d6d;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .secret {
-            display: none;
-            margin-top: 30px;
-            font-size: 1.3em;
-            font-weight: bold;
-        }
+button:hover {
+    transform: scale(1.08);
+    background: #ffe1e8;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+input {
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    margin-top: 15px;
+    width: 80%;
+    font-size: 1em;
+    text-align: center;
+}
 
-        /* Cœurs animés */
-        .heart {
-            position: fixed;
-            color: rgba(255,255,255,0.7);
-            animation: float 6s infinite;
-        }
+.secret {
+    display: none;
+    margin-top: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
 
-        @keyframes float {
-            0% { transform: translateY(100vh); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-10vh); opacity: 0; }
-        }
-    </style>
+.heart {
+    position: fixed;
+    bottom: -20px;
+    animation: float 6s infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
     <h1>Joyeuse Saint-Valentin ❤️</h1>
+
     <p>
-        Mon amour,<br>
-        Chaque jour à tes côtés est un cadeau.<br>
-        Cette petite page est juste une façon de te dire<br>
-        combien je t’aime et combien tu comptes pour moi 💕
+        Mon cher <strong>AMOUR</strong>,<br><br>
+        SAKHO ILLIMANE ou tout simplement BOROM NDAR ,
+En ce jour de Saint-Valentin, je veux simplement te dire merci d’être toi.
+Merci pour ta présence, ton soutien, ta force et ta tendresse.
+Avec toi, chaque jour a plus de sens, chaque sourire est vrai, et chaque moment devient précieux.
+Je suis fière de t’aimer et encore plus fière de marcher à tes côtés.
+Je t’aime aujourd’hui, demain et pour toujours. ❤️💕
     </p>
 
-    <button onclick="showMessage()">Clique ici 💖</button>
+    <button onclick="showCode()">Découvrir un message secret 🔐</button>
+
+    <div id="codeBox" style="display:none;">
+        <input type="password" id="code" placeholder="Entre le code 💌">
+        <br>
+        <button onclick="checkCode()">Valider</button>
+    </div>
 
     <div class="secret" id="secret">
-        Tu es l’amour de ma vie 💍<br>
-        Aujourd’hui, demain et toujours ❤️
-    </div>
+        Tu es l’homme de ma vie 💍<br>
+        Mon présent, mon futur, mon amour éternel ❤️
+            </div>
 </div>
 
 <script>
-    function showMessage() {
+function showCode() {
+    document.getElementById("codeBox").style.display = "block";
+}
+
+function checkCode() {
+    const code = document.getElementById("code").value;
+    if (code === "0214") {
         document.getElementById("secret").style.display = "block";
+    } else {
+        alert("Code incorrect 💔");
     }
+}
 
-    // Génération des cœurs
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-        document.body.appendChild(heart);
-
-        setTimeout(() => heart.remove(), 6000);
-    }, 400);
+// Cœurs animés
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 12) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 500);
 </script>
 
 </body>
