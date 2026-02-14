@@ -51,6 +51,40 @@
             font-size: 1.3em;
             font-weight: bold;
         }
+        /* Bouquets décoratifs */
+.flower {
+    position: fixed;
+    width: 180px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/* Pour que le contenu reste au-dessus */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -89,15 +123,6 @@ Tu es devenu bien plus qu’un compagnon :<br> tu es mon refuge 🥹<br> ma forc
 
     </p>
 
-    <!-- <button onclick="showMessage()">Clique ici 💖</button>
-
-    <div class="secret" id="secret">
-        Merci pour ton amour ❤️<br>
-        ta patience <br> ta protection et ta présence constante.<br>
-Si c’était à refaire, je te dirais encore ouiiiiiiiiii… <br> mille fois oui.<br>
-
-Je t’aime aujourd’hui plus qu’hier, et bien moins que demain. ❤️
-    </div> -->
    <a href="surprise.html">
     <button>Clique ici 💖</button>
 </a>
@@ -123,6 +148,13 @@ Je t’aime aujourd’hui plus qu’hier, et bien moins que demain. ❤️
 </script>
 
 </body>
+    <!-- Bouquets décoratifs -->
+<img src="fleur-gauche-haut.png" class="flower top-left">
+<img src="fleur-droite-haut.png" class="flower top-right">
+<img src="fleur-gauche-bas.png" class="flower bottom-left">
+<img src="fleur-droite-bas.png" class="flower bottom-right">
+
 </html>
+
 
 
