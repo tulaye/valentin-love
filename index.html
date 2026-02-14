@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -130,9 +130,149 @@ Tu es devenu bien plus qu’un compagnon :<br> tu es mon refuge 🥹<br> ma forc
 
 </html>
 
+ -->
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pour toi mon amour ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
+        .container {
+            padding: 40px 20px;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
 
+        h1 {
+            font-size: 2.5em;
+        }
 
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
 
+        button {
+            background: white;
+            color: #ff4d6d;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
+        button:hover {
+            transform: scale(1.1);
+            background: #ffe3ea;
+        }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Bouquets décoratifs avec emojis fleurs */
+        .flower {
+            position: fixed;
+            font-size: 2em;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.85;
+            animation: floatFlowers 6s infinite alternate ease-in-out;
+        }
+        .top-left { top: 10px; left: 10px; }
+        .top-right { top: 10px; right: 10px; }
+        .bottom-left { bottom: 10px; left: 10px; }
+        .bottom-right { bottom: 10px; right: 10px; }
+
+        @keyframes floatFlowers {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(-5deg); }
+        }
+
+        /* Cœurs flottants */
+        .heart {
+            position: fixed;
+            color: rgba(255,0,100,0.8);
+            font-size: 20px;
+            z-index: 1;
+            pointer-events: none;
+            user-select: none;
+            animation: floatHeart 6s linear forwards;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            30% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Bouquets de fleurs décoratifs -->
+<div class="flower top-left">🌹🌸💐🌷</div>
+<div class="flower top-right">💐🌹🌸🌺</div>
+<div class="flower bottom-left">🌷🌸🌹💐</div>
+<div class="flower bottom-right">🌸🌹💐🌷</div>
+
+<div class="container">
+    <h1>14 février, le jour où je t'ai dit OUI ❤️</h1>
+    <p>
+        Mon amour 💍❤️,<br>
+        Le 14 février ne sera jamais une date ordinaire pour moi 🥰.<br>
+        C’est le jour où j’ai accepté de marcher à tes côtés 👩🏼‍🤝‍👨🏻… <br>sans imaginer que ce simple “oui” changerait toute ma vie.<br><br>
+        Ce jour-là, j’ai choisi un homme 💍🧡.<br>
+        Aujourd’hui, je célèbre mon mari 💍🧡.<br>
+        Tu es devenu bien plus qu’un compagnon :<br>
+        tu es mon refuge 🥹, ma force 💪🏾, mon soutien 😌 et la paix de mon cœur 🧡.<br>
+        Chaque étape parcourue avec toi confirme que j’ai fait le plus beau choix de ma vie.<br>
+    </p>
+
+    <a href="surprise.html">
+        <button>Mon petit mot pour toi 💝💖</button>
+    </a>
+</div>
+
+<script>
+    // Pluie de cœurs animés
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+
+        // position horizontale aléatoire
+        heart.style.left = Math.random() * 100 + "vw";
+
+        // taille aléatoire
+        const size = Math.random() * 25 + 15;
+        heart.style.fontSize = size + "px";
+
+        // vitesse aléatoire
+        const duration = Math.random() * 4 + 5; // 5-9s
+        heart.style.animationDuration = duration + "s";
+
+        document.body.appendChild(heart);
+
+        // suppression après animation
+        setTimeout(() => heart.remove(), duration * 1000);
+    }, 300);
+</script>
+
+</body>
+</html>
