@@ -57,18 +57,23 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Cœurs animés */
-        .heart {
-            position: fixed;
-            color: rgba(255,255,255,0.7);
-            animation: float 6s infinite;
-        }
+      /* Cœurs flottants */
+.heart {
+    position: fixed;
+    color: rgba(255,0,100,0.8);
+    font-size: 20px;
+    z-index: 1;
+    pointer-events: none; /* ne bloque pas les clics */
+    user-select: none;
+    animation: floatHeart 6s linear forwards;
+}
 
-        @keyframes float {
-            0% { transform: translateY(100vh); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-10vh); opacity: 0; }
-        }
+@keyframes floatHeart {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
     </style>
 </head>
 <body>
@@ -105,12 +110,18 @@ Tu es devenu bien plus qu’un compagnon :<br> tu es mon refuge 🥹<br> ma forc
         const heart = document.createElement("div");
         heart.className = "heart";
         heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-        document.body.appendChild(heart);
+         const size = Math.random() * 25 + 15; // entre 15px et 40px
+    heart.style.fontSize = size + "px";
 
-        setTimeout(() => heart.remove(), 6000);
-    }, 400);
+    // vitesse aléatoire
+    const duration = Math.random() * 4 + 5; // entre 5 et 9s
+    heart.style.animationDuration = duration + "s";
+
+    document.body.appendChild(heart);
+
+    // suppression après animation
+    setTimeout(() => heart.remove(), duration * 1000);
+}, 300); // crée un cœur toutes les 0.3 secondes
 </script>
 
 </body>
@@ -118,6 +129,7 @@ Tu es devenu bien plus qu’un compagnon :<br> tu es mon refuge 🥹<br> ma forc
 
 
 </html>
+
 
 
 
