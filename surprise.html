@@ -2,44 +2,103 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Mon amour ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<title>Mon amour éternel ❤️</title>
 
 <style>
 body {
     margin: 0;
-    padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: url("fond.jpg") no-repeat center center fixed;
+    background: url("images/fond.jpg") no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
+    flex-direction: column;
     color: white;
+    text-align: center;
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 600px;
-    animation: fadeIn 2s ease-in-out;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    padding: 40px 25px;
+    border-radius: 25px;
+    max-width: 700px;
+    margin: 20px;
+    animation: fadeIn 2s ease;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.2em;
+    margin-bottom: 20px;
 }
 
 p {
     font-size: 1.2em;
-    line-height: 1.6;
+    line-height: 1.8;
+    opacity: 0;
+    animation: appear 3s forwards;
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+}
+
+.signature {
+    margin-top: 40px;
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+.name {
+    display: block;
+    margin-top: 15px;
+    font-size: 2em;
+    font-family: 'Great Vibes', cursive;
+    color: #ffd6e0;
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes appear {
+    to { opacity: 1; }
+}
+
+/* Coeurs flottants */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    animation: float 6s infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
 }
 </style>
 </head>
@@ -47,21 +106,46 @@ p {
 <body>
 
 <div class="overlay">
-   
+    <h1>Pour l’homme de ma vie 💍</h1>
 
     <p>
         Merci pour ton amour ❤️<br>
-        ta patience,<br>
-        ta protection et ta présence constante.<br><br>
+        Ta patience, ta protection et ta présence constante.<br><br>
 
-        Si c’était à refaire,<br>
-        je te dirais encore ouiiiiiiiiii…<br>
-        mille fois oui 💕<br><br>
+        Si c’était à refaire…<br>
+        Je te dirais encore oui.<br>
+        Mille fois oui 💕<br><br>
 
-        Je t’aime aujourd’hui plus qu’hier,<br>
-        et bien moins que demain ❤️
+        Je t’aime aujourd’hui plus qu’hier,
+        et bien moins que demain.
     </p>
+
+    <h2 style="margin-top:40px;">Nos plus beaux souvenirs 📸</h2>
+
+    <div class="gallery">
+        <img src="images/photo1.jpg">
+        <img src="images/photo2.jpg">
+        <img src="images/photo3.jpg">
+        <img src="images/photo4.jpg">
+    </div>
+
+    <div class="signature">
+        Avec tout mon amour ❤️
+        <span class="name">Ta Femme Africaine ❤️</span>
+    </div>
 </div>
+
+<script>
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
 
 </body>
 </html>
